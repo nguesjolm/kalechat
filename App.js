@@ -6,9 +6,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //Import screen
-import LoginScreen  from "./components/LoginScreen";
-import ChatScreen from './components/ChatScreen';
-import RegistrationScreen from './components/RegistrationScreen';
+import LoginScreen  from "./screens/LoginScreen";
+import ChatScreen from './screens/ChatScreen';
+import RegistrationScreen from './screens/RegistrationScreen';
 
 // function LoginScreen() {
 //   return (
@@ -39,11 +39,10 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Registration" component={RegistrationScreen} />
+      <Stack.Navigator initialRouteName="LoginScreen">
         <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Registration" component={RegistrationScreen} />
         <Stack.Screen name="Chat" component={ChatScreen} />
-
       </Stack.Navigator>
     </NavigationContainer>
   );
